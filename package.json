@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/antd": "^1.0.0",
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",

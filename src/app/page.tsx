@@ -1,16 +1,15 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import DashboardScreen from '@/screen/dashboard.screen';
+import DashboardScreen from './home/page';
 import HeaderScreen from '@/components/layouts/header.layout';
 import FooterScreen from '@/components/layouts/footer.layout';
+import Layout from '@/components/layouts/layout';
 
 export default function Home() {
   return (
     <main >
-      <HeaderScreen/>
+      <Layout>
       <DashboardScreen/>
-      <FooterScreen/>
+      </Layout>
     </main>
   )
 }

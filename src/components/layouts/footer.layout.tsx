@@ -1,6 +1,6 @@
-import '../../styles/footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard, faTruck, faMoneyCheckDollar, faComments } from '@fortawesome/free-solid-svg-icons'
+import '@/styles/style.css';
 
 export default function FooterScreen() {
 	return (

@@ -1,8 +1,21 @@
-import '../styles/footer.css';
+import '@/styles/style.css';
 
 export default function DashboardScreen() {
   return (
     <div id="page-content">
+        <div className="collection-header mt-5 pt-3">
+				<div className="collection-hero">
+					<div className="collection-hero__image">
+						<img
+							className="lazyload"
+							data-src="https://totoday-api.mltechsoft.com/media/banner/home/BANNER%20SLIDE%20HOME%203-233ba306-8ee9-4597-9ecd-7e1f62e6e6fc.png"
+							src="https://totoday-api.mltechsoft.com/media/banner/home/BANNER%20SLIDE%20HOME%203-233ba306-8ee9-4597-9ecd-7e1f62e6e6fc.png"
+							alt="Women"
+							title="Women"
+						/>
+					</div>
+				</div>
+			</div>
     	<div className="slideshow slideshow-wrapper pb-section">
         	<div className="home-slideshow">
             	<div className="slide slideshow--medium">

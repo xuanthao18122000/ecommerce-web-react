@@ -1,15 +1,16 @@
-import React from "react";
-import Logo from "../../assets/images/logo.svg";
-import Link from "next/link";
-import Layout from "@/components/layouts/layout";
-import '../../styles/style.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import HeaderScreen from '@/components/layouts/header.layout';
+import FooterScreen from '@/components/layouts/footer.layout';
+import Layout from '@/components/layouts/layout';
+import TShirtScreen from '@/pages/t-shirt.screen';
 
-const TShirtScreen = () => {
-	return (
-		<Layout>
-		
-		</Layout>
-	);
-};
+export default function Home2() {
+  return (
+    <main >
+      <Layout>
+      <TShirtScreen/>
+      </Layout>
+    </main>
+  )
+}
 
-export default TShirtScreen;

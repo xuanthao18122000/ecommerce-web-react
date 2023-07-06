@@ -1,4 +1,4 @@
-import '@/styles/style.css';
+import "@/styles/style.css";
 
 export default function DashboardScreen() {
 	return (
@@ -13,62 +13,6 @@ export default function DashboardScreen() {
 							alt="Women"
 							title="Women"
 						/>
-					</div>
-				</div>
-			</div>
-			<div className="slideshow slideshow-wrapper pb-section">
-				<div className="home-slideshow">
-					<div className="slide slideshow--medium">
-						<div className="blur-up lazyload">
-							<img
-								className="blur-up lazyload"
-								data-src="assets/images/slideshow-banners/home12-category-banner1.jpg"
-								src="assets/images/slideshow-banners/home12-category-banner1.jpg"
-								alt="Outfit of Today"
-								title="Outfit of Today"
-							/>
-							<div className="slideshow__text-wrap slideshow__overlay classic middle">
-								<div className="slideshow__text-content classic left">
-									<div className="container">
-										<div className="wrap-caption left">
-											<h2 className="h1 mega-title slideshow__title">
-												Outfit of Today
-											</h2>
-											<span className="mega-subtitle slideshow__subtitle">
-												Lookbook ss 2018
-											</span>
-											<span className="btn">View Catelog</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="slide slideshow--medium">
-						<div className="blur-up lazyload">
-							<img
-								className="blur-up lazyload"
-								data-src="assets/images/slideshow-banners/home12-category-banner2.jpg"
-								src="assets/images/slideshow-banners/home12-category-banner2.jpg"
-								alt="Accessories"
-								title="Accessories"
-							/>
-							<div className="slideshow__text-wrap slideshow__overlay classic middle">
-								<div className="slideshow__text-content classic left">
-									<div className="container">
-										<div className="wrap-caption left">
-											<h2 className="h1 mega-title slideshow__title">
-												Accessories
-											</h2>
-											<span className="mega-subtitle slideshow__subtitle">
-												New Collection A-W ss18
-											</span>
-											<span className="btn">Shop now</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -136,10 +80,18 @@ export default function DashboardScreen() {
 							<div className="productSlider grid-products grid-products-hover-gry">
 								<div className="col-12 item">
 									<div className="product-image">
-										{/* <a href="product-layout-1.html" className="grid-view-item__link">
-                                        <img className="primary blur-up lazyload" data-src="assets/images/product-images/product-image7.jpg" src="assets/images/product-images/product-image7.jpg" alt="image" title="product">
-                                        <img className="hover blur-up lazyload" data-src="assets/images/product-images/product-image7-1.jpg" src="assets/images/product-images/product-image7-1.jpg" alt="image" title="product">
-                                    </a> */}
+										<a
+											href="product-layout-1.html"
+											className="grid-view-item__link"
+										>
+											<img
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												alt="image"
+												title="product"
+											/>
+										</a>
 										<form className="variants add" action="#">
 											<button className="btn btn-addto-cart" type="button">
 												Add To Cart
@@ -185,10 +137,15 @@ export default function DashboardScreen() {
 								</div>
 								<div className="col-12 item">
 									<div className="product-image">
-										{/* <div  className="grid-view-item__link">
-                                        <img className="primary blur-up lazyload" data-src="assets/images/product-images/product-image24.jpg" src="assets/images/product-images/product-image24.jpg" alt="image" title="product">
-                                        <img className="hover blur-up lazyload" data-src="assets/images/product-images/product-image24-1.jpg" src="assets/images/product-images/product-image24-1.jpg" alt="image" title="product">
-                                    </div> */}
+										<div className="grid-view-item__link">
+										<img
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												alt="image"
+												title="product"
+											/>
+										</div>
 										<form className="variants add" action="#">
 											<button className="btn btn-addto-cart" type="button">
 												Select Options
@@ -234,16 +191,26 @@ export default function DashboardScreen() {
 								</div>
 								<div className="col-12 item">
 									<div className="product-image">
-										{/* <a href="product-layout-1.html" className="grid-view-item__link">
-                                        <img className="primary blur-up lazyload" data-src="assets/images/product-images/product-image33.jpg" src="assets/images/product-images/product-image33.jpg" alt="image" title="product">
-                                        <img className="hover blur-up lazyload" data-src="assets/images/product-images/product-image33-1.jpg" src="assets/images/product-images/product-image33-1.jpg" alt="image" title="product">
-                                    </a>
-                                    <form className="variants add" action="#" onclick="window.location.href='cart.html'"method="post">
-                                        <button className="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
-                                    </form> */}
+										<a
+											href="product-layout-1.html"
+											className="grid-view-item__link"
+										>
+											<img
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												alt="image"
+												title="product"
+											/>
+										</a>
+										<form className="variants add">
+											<button className="btn btn-addto-cart" type="button">
+												Add To Cart
+											</button>
+										</form>
 										<div className="button-set">
 											<a
-												href="javascript:void(0)"
+												href=""
 												title="Quick View"
 												className="quick-view-popup quick-view"
 												data-toggle="modal"
@@ -287,16 +254,9 @@ export default function DashboardScreen() {
 											className="grid-view-item__link"
 										>
 											<img
-												className="primary blur-up lazyload"
-												data-src="assets/images/product-images/product-image4-1.jpg"
-												src="assets/images/product-images/product-image4-1.jpg"
-												alt="image"
-												title="product"
-											/>
-											<img
-												className="hover blur-up lazyload"
-												data-src="assets/images/product-images/product-image4.jpg"
-												src="assets/images/product-images/product-image4.jpg"
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
 												alt="image"
 												title="product"
 											/>
@@ -353,16 +313,9 @@ export default function DashboardScreen() {
 											className="grid-view-item__link"
 										>
 											<img
-												className="primary blur-up lazyload"
-												data-src="assets/images/product-images/product-image5.jpg"
-												src="assets/images/product-images/product-image5.jpg"
-												alt="image"
-												title="product"
-											/>
-											<img
-												className="hover blur-up lazyload"
-												data-src="assets/images/product-images/product-image5-1.jpg"
-												src="assets/images/product-images/product-image5-1.jpg"
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
 												alt="image"
 												title="product"
 											/>
@@ -420,13 +373,13 @@ export default function DashboardScreen() {
 					<div className="row">
 						<div className="feature-row">
 							<div className="col-12 col-sm-12 col-md-6 feature-row__item text-center">
-								<img
-									className="blur-up lazyload"
-									data-src="assets/images/collection/home12-category-bnr3.jpg"
-									src="assets/images/collection/home12-category-bnr3.jpg"
-									alt="Nuke New Arrivals"
-									title="Nuke New Arrivals"
-								/>
+							<img
+											className="lazyload w-25"
+												data-src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												src="https://bizweb.dktcdn.net/thumb/1024x1024/100/399/392/products/ls.png"
+												alt="image"
+												title="product"
+											/>
 							</div>
 							<div className="col-12 col-sm-12 col-md-6 feature-row__item feature-row__text feature-row__text--left text-left">
 								<div className="row-text">

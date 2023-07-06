@@ -1,9 +1,63 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/images/logo.svg";
+import axios from "axios";
+import useAxios from "axios-hooks";
+
+type Product = {
+	id: number;
+	createdAt: string;
+	updatedAt: string;
+	name: string;
+	code: string;
+	description: string;
+	price: string;
+	status: number;
+	logs: {
+		list: [];
+	};
+};
+
+interface ProductResponse {
+	code: number;
+	success: boolean;
+	data: DataProduct;
+	msg: string;
+}
+
+interface DataProduct {
+	list: Product[];
+	total: number;
+	page: number;
+	perPage: number;
+}
 
 const TShirtScreen = () => {
+	const [products, setProducts] = useState<Product[] | null>(null);
+	const [page, setPage] = useState<number>(1);
+	const [perPage, setPerPage] = useState<number>(10);
+
+	const [{ data, loading, error }] = useAxios<ProductResponse>({
+		baseURL: "http://localhost:3002",
+		url: `/products?page=${page}&perPage=${perPage}`,
+	});
+
+	useEffect(() => {
+		if (data) {
+			setProducts(data.data.list);
+		}
+	}, [data]);
+
 	return (
 		<div id="page-content" className="mt-5 pt-5">
+			{/* {products &&
+				products.map((product) => (
+					<div key={product.id} className="product-item">
+						<h3>{product.name}</h3>
+						<p>{product.description}</p>
+						<p>Price: {product.price}</p>
+					</div>
+				))} */}
 			<div className="container">
 				<div className="row">
 					<div className="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar">

@@ -28,10 +28,10 @@ const Header = () => {
 							</span>
 							<ul className="customer-links list-inline">
 								<li>
-									<a href="login.html">Login</a>
+									<a href="/login">Login</a>
 								</li>
 								<li>
-									<a href="register.html">Create Account</a>
+									<a href="/register">Create Account</a>
 								</li>
 								<li>
 									<a href="wishlist.html">Wishlist</a>

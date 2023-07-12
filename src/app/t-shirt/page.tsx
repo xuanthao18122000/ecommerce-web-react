@@ -4,7 +4,7 @@ import FooterScreen from '@/components/layouts/footer.layout';
 import Layout from '@/components/layouts/layout';
 import TShirtScreen from '@/pages/t-shirt.screen';
 
-export default function Home2() {
+export default function TShirt() {
   return (
     <main >
       <Layout>

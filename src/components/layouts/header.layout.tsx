@@ -67,150 +67,73 @@ const Header = () => {
 							<nav className="grid__item" id="AccessibleNav">
 								<ul id="siteNav" className="site-nav medium center hidearrow">
 									<li className="lvl1 parent megamenu">
-										<a href="#">
+										<a href="/">
 											Home <i className="anm anm-angle-down-l"></i>
-										</a>
-									</li>
-									<li className="lvl1 parent megamenu">
-										<a href="#">
-											Shop <i className="anm anm-angle-down-l"></i>
-										</a>
-									</li>
-									<li className="lvl1 parent megamenu">
-										<a href="#">
-											Product <i className="anm anm-angle-down-l"></i>
 										</a>
 									</li>
 									<li className="lvl1 parent dropdown">
 										<a href="#">
-											Pages <i className="anm anm-angle-down-l"></i>
+											Product <i className="anm anm-angle-down-l"></i>
 										</a>
 										<ul className="dropdown">
 											<li>
-												<a href="cart-variant1.html" className="site-nav">
-													Cart Page <i className="anm anm-angle-right-l"></i>
+												<a className="site-nav">
+													Shirt  <span className="lbl nm_label1">New</span>{" "}
 												</a>
 												<ul className="dropdown">
 													<li>
-														<a href="cart-variant1.html" className="site-nav">
-															Cart Variant1
+														<a href="/shirt" className="site-nav">
+														Shirt 
 														</a>
 													</li>
 													<li>
-														<a href="cart-variant2.html" className="site-nav">
-															Cart Variant2
+														<a href="/t-shirt" className="site-nav">
+														T-Shirt
 														</a>
 													</li>
 												</ul>
 											</li>
 											<li>
 												<a href="compare-variant1.html" className="site-nav">
-													Compare Product{" "}
+													Trousers
 													<i className="anm anm-angle-right-l"></i>
 												</a>
-												<ul className="dropdown">
-													<li>
-														<a
-															href="compare-variant1.html"
-															className="site-nav"
-														>
-															Compare Variant1
-														</a>
-													</li>
-													<li>
-														<a
-															href="compare-variant2.html"
-															className="site-nav"
-														>
-															Compare Variant2
-														</a>
-													</li>
-												</ul>
 											</li>
 											<li>
 												<a href="checkout.html" className="site-nav">
-													Checkout
-												</a>
-											</li>
-											<li>
-												<a href="about-us.html" className="site-nav">
-													About Us <span className="lbl nm_label1">New</span>{" "}
-												</a>
-											</li>
-											<li>
-												<a href="contact-us.html" className="site-nav">
-													Contact Us
+													Dress
 												</a>
 											</li>
 											<li>
 												<a href="faqs.html" className="site-nav">
-													FAQs
+													Shoes
 												</a>
 											</li>
 											<li>
-												<a href="lookbook1.html" className="site-nav">
-													Lookbook<i className="anm anm-angle-right-l"></i>
-												</a>
-												<ul>
-													<li>
-														<a href="lookbook1.html" className="site-nav">
-															Style 1
-														</a>
-													</li>
-													<li>
-														<a href="lookbook2.html" className="site-nav">
-															Style 2
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<a href="404.html" className="site-nav">
-													404
-												</a>
-											</li>
-											<li>
-												<a href="coming-soon.html" className="site-nav">
-													Coming soon <span className="lbl nm_label1">New</span>{" "}
+												<a href="faqs.html" className="site-nav">
+													Hats
 												</a>
 											</li>
 										</ul>
 									</li>
 									<li className="lvl1 parent dropdown">
-										<a href="#">
+										<a href="/blog">
 											Blog <i className="anm anm-angle-down-l"></i>
 										</a>
-										<ul className="dropdown">
-											<li>
-												<a href="blog-left-sidebar.html" className="site-nav">
-													Left Sidebar
-												</a>
-											</li>
-											<li>
-												<a href="blog-right-sidebar.html" className="site-nav">
-													Right Sidebar
-												</a>
-											</li>
-											<li>
-												<a href="blog-fullwidth.html" className="site-nav">
-													Fullwidth
-												</a>
-											</li>
-											<li>
-												<a href="blog-grid-view.html" className="site-nav">
-													Gridview
-												</a>
-											</li>
-											<li>
-												<a href="blog-article.html" className="site-nav">
-													Article
-												</a>
-											</li>
-										</ul>
 									</li>
 									<li className="lvl1">
-										<a href="#">
-											<b>Buy Now!</b> <i className="anm anm-angle-down-l"></i>
+										<a href="/about">
+											<b>About Us</b> <i className="anm anm-angle-down-l"></i>
+										</a>
+									</li>
+									<li className="lvl1">
+										<a href="/contact">
+											<b>Contact us</b> <i className="anm anm-angle-down-l"></i>
+										</a>
+									</li>
+									<li className="lvl1 parent megamenu">
+										<a href="/faqs">
+											FAQs <i className="anm anm-angle-down-l"></i>
 										</a>
 									</li>
 								</ul>
@@ -218,15 +141,16 @@ const Header = () => {
 						</div>
 						<div className="col-4 col-sm-3 col-md-3 col-lg-2">
 							<div className="site-cart">
-								<a href="#;" className="site-header__cart" title="Cart">
+								<a href="/cart" className="site-header__cart" title="Cart">
 									<i className="icon anm anm-bag-l"></i>
-									<span
+										<img src="https://cdn-icons-png.flaticon.com/128/1170/1170678.png" id="CartCount" className="w-25"/>
+										{/* <span
 										id="CartCount"
 										className="site-header__cart-count"
 										data-cart-render="item_count"
 									>
 										2
-									</span>
+									</span> */}
 								</a>
 								<div id="header-cart" className="block block-cart">
 									<ul className="mini-products-list">

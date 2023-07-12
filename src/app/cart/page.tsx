@@ -5,7 +5,7 @@ import Layout from '@/components/layouts/layout';
 import TShirtScreen from '@/pages/t-shirt.screen';
 import CartScreen from '@/pages/cart.screen';
 
-export default function Home2() {
+export default function Cart() {
   return (
     <main >
       <Layout>

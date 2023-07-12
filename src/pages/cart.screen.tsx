@@ -921,7 +921,7 @@ const CartScreen = () => {
 										type="checkbox"
 										name="tearm"
 										id="cartTearm"
-										className="checkbox"
+										className="checkbox me-2"
 										defaultValue="tearm"
 									/>
 									I agree with the terms and conditions

@@ -1,12 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import Layout from '@/components/layouts/layout';
-import AboutScreen from '@/pages/about.screen';
+import ContactScreen from '@/pages/contact.screen';
+import FAQScreen from '@/pages/faq.screen';
 
-export default function About() {
+export default function FAQs() {
   return (
     <main >
       <Layout>
-      <AboutScreen/>
+      <FAQScreen/>
       </Layout>
     </main>
   )

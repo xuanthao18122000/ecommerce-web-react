@@ -39,7 +39,7 @@ const TShirtScreen = () => {
 	const [perPage, setPerPage] = useState<number>(10);
 
 	const [{ data, loading, error }] = useAxios<ProductResponse>({
-		baseURL: "http://localhost:3002",
+		baseURL: "http://localhost:3001",
 		url: `/products?page=${page}&perPage=${perPage}`,
 	});
 

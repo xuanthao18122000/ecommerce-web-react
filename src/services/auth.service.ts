@@ -1,10 +1,10 @@
 import { axiosUser } from "./api.service";
 
 
-const loginApi = (payload: LoginPayload) => {
+const loginApi = (payload: ILoginPayload) => {
     return axiosUser.post("/auth/login", payload)
 }
-const registerApi = (payload: RegisterPayload) => {
+const registerApi = (payload: IRegisterPayload) => {
     return axiosUser.post("/auth/register", payload)
 }
 

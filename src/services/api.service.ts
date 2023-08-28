@@ -8,4 +8,16 @@ const axiosProduct = axios.create({
   baseURL: "http://localhost:3002",
 });
 
-export { axiosUser, axiosProduct };
+const axiosPayment = axios.create({
+  baseURL: "http://localhost:3003",
+});
+
+const axiosOrder = axios.create({
+  baseURL: "http://localhost:3004",
+});
+
+const axiosCart = axios.create({
+  baseURL: "http://localhost:3005",
+});
+
+export { axiosUser, axiosProduct, axiosPayment, axiosOrder, axiosCart };

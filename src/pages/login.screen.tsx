@@ -7,16 +7,13 @@ import React, { useState } from "react";
 
 const LoginScreen = () => {
 	// const router = useRouter();
-	const [formValues, setFormValues] = useState({
-		email: "",
-		password: "",
-	});
+	const [formValues, setFormValues] = useState<ILoginPayload>({ email: "", password: "" });
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
 	const handleSubmit = async () => {
 		console.log(formValues);
-		if(!formValues.email || !formValues.password) {
+		if(!formValues?.email || !formValues?.password) {
 			console.log("Vui long nhap day du email, password");
 			return // toast.error("Email/PPassword is reqired!")
 		}
@@ -34,9 +31,14 @@ const LoginScreen = () => {
 				</div>
 			</div>
 			<div className="container">
+			
 				<div className="row">
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
 						<div className="mb-4">
+							<div className="d-flex justify-content-between align-items-center mb-4">
+								<div className="py-3 bg-danger text-white rounded text-center" style={{ width: '48%' }}>Google</div>
+								<div className="py-3 bg-primary text-white rounded text-center" style={{ width: '48%' }}>Facebook</div>
+							</div>
 							<div id="CustomerLoginForm" className="contact-form">
 								<div className="row mb-5">
 									<div className="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -45,8 +47,8 @@ const LoginScreen = () => {
 											<input
 												type="email"
 												placeholder=""
-												className=""
-												value={formValues.email}
+												className="rounded"
+												value={formValues?.email}
 												onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
 											/>
 										</div>
@@ -57,8 +59,8 @@ const LoginScreen = () => {
 											<input
 												type="password"
 												placeholder=""
-												className=""
-												value={formValues.password}
+												className="rounded"
+												value={formValues?.password}
 												onChange={(e) => setFormValues({ ...formValues, password: e.target.value })}
 											/>
 										</div>
@@ -66,7 +68,7 @@ const LoginScreen = () => {
 								</div>
 								<div className="row">
 									<div className="text-center col-12 col-sm-12 col-md-12 col-lg-12">
-										<input onClick={handleSubmit} className="btn mb-3 border" value="Sign In" disabled={ formValues.email && formValues.password ? false: true} />
+										<input onClick={handleSubmit} className="btn mb-3 border rounded py-3" value="Sign In" disabled={ formValues?.email && formValues?.password ? false: true} />
 										{error && <p className="text-danger">{error}</p>}
 										<p className="mb-4">
 											<a href="#" id="RecoverPassword">

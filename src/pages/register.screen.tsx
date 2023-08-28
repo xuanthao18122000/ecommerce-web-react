@@ -1,10 +1,30 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Logo from "../../assets/images/logo.svg";
-import axios from "axios";
-import useAxios from "axios-hooks";
-
+import { registerApi } from "@/services/auth.service";
+import React, {  useState } from "react";
 const RegisterScreen = () => {
+	const [formValues, setFormValues] = useState({
+		fullName: "",
+		email: "",
+		password: "",
+		repeatPassword: "",
+	});
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+
+	const handleSubmit = async () => {
+		console.log(formValues);
+		if(!formValues.email || !formValues.password || !formValues.fullName || !formValues.repeatPassword  ) {
+			console.log("Vui long nhap day du thong tin");
+			return // toast.error("Email/PPassword is reqired!")
+		}
+		if(formValues.password !== formValues.repeatPassword) {
+			console.log("Repeat password wrong");
+			return // toast.error("Email/PPassword is reqired!")
+		}
+		let response = await registerApi(formValues);
+		console.log(">>> Check response: ", response)
+	};
+
 	return (
 		<div id="page-content">
 			<div className="page section-header text-center">
@@ -18,11 +38,8 @@ const RegisterScreen = () => {
 				<div className="row">
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
 						<div className="mb-4">
-							<form
-								// method="post"
-								action="/login"
+							<div
 								id="CustomerLoginForm"
-								acceptCharset="UTF-8"
 								className="contact-form"
 							>
 								<div className="row mb-4">
@@ -34,6 +51,7 @@ const RegisterScreen = () => {
 												name="customer[first_name]"
 												placeholder=""
 												id="FirstName"
+												onChange={(e) => setFormValues({ ...formValues, fullName: e.target.value })}
 											/>
 										</div>
 									</div>
@@ -48,6 +66,7 @@ const RegisterScreen = () => {
 												className=""
 												autoCorrect="off"
 												autoCapitalize="off"
+												onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
 											/>
 										</div>
 									</div>
@@ -61,6 +80,8 @@ const RegisterScreen = () => {
 												placeholder=""
 												id="CustomerPassword"
 												className=""
+												onChange={(e) => setFormValues({ ...formValues, password: e.target.value })}
+
 											/>
 										</div>
 									</div>
@@ -68,10 +89,14 @@ const RegisterScreen = () => {
 										<div className="form-group mb-3">
 											<label className="mb-2">Repeat password</label>
 											<input
-												type="text"
-												name="customer[last_name]"
+												type="password"
+												defaultValue=""
+												name="customer[repeatPassword]"
 												placeholder=""
-												id="LastName"
+												id="CustomerPassword"
+												className=""
+												onChange={(e) => setFormValues({ ...formValues, repeatPassword: e.target.value })}
+
 											/>
 										</div>
 									</div>
@@ -80,12 +105,14 @@ const RegisterScreen = () => {
 									<div className="text-center col-12 col-sm-12 col-md-12 col-lg-12">
 										<input
 											type="submit"
+											onClick={handleSubmit}
+											disabled={ formValues.email && formValues.password && formValues.fullName  ? false: true}
 											className="btn mb-3"
 											defaultValue="Create"
 										/>
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

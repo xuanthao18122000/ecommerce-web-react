@@ -1,10 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Logo from "../../assets/images/logo.svg";
-import axios from "axios";
+
+import { loginApi } from "@/services/auth.service";
 import useAxios from "axios-hooks";
+import React, { useState } from "react";
+// import { useRouter } from "next/router";
 
 const LoginScreen = () => {
+	// const router = useRouter();
+	const [formValues, setFormValues] = useState({
+		email: "",
+		password: "",
+	});
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+
+	const handleSubmit = async () => {
+		console.log(formValues);
+		if(!formValues.email || !formValues.password) {
+			console.log("Vui long nhap day du email, password");
+			return // toast.error("Email/PPassword is reqired!")
+		}
+		let response = await loginApi(formValues);
+		console.log(">>> Check response: ", response)
+	};
+
 	return (
 		<div id="page-content">
 			<div className="page section-header text-center">
@@ -18,25 +37,17 @@ const LoginScreen = () => {
 				<div className="row">
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
 						<div className="mb-4">
-							<form
-								// method="post"
-								action="/"
-								id="CustomerLoginForm"
-								acceptCharset="UTF-8"
-								className="contact-form"
-							>
+							<div id="CustomerLoginForm" className="contact-form">
 								<div className="row mb-5">
 									<div className="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div className="form-group mb-3">
 											<label className="mb-2">Email</label>
 											<input
 												type="email"
-												name="customer[email]"
 												placeholder=""
-												id="CustomerEmail"
 												className=""
-												autoCorrect="off"
-												autoCapitalize="off"
+												value={formValues.email}
+												onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
 											/>
 										</div>
 									</div>
@@ -45,22 +56,18 @@ const LoginScreen = () => {
 											<label className="mb-2">Password</label>
 											<input
 												type="password"
-												defaultValue=""
-												name="customer[password]"
 												placeholder=""
-												id="CustomerPassword"
 												className=""
+												value={formValues.password}
+												onChange={(e) => setFormValues({ ...formValues, password: e.target.value })}
 											/>
 										</div>
 									</div>
 								</div>
 								<div className="row">
 									<div className="text-center col-12 col-sm-12 col-md-12 col-lg-12">
-										<input
-											type="submit"
-											className="btn mb-3"
-											defaultValue="Sign In"
-										/>
+										<input onClick={handleSubmit} className="btn mb-3 border" value="Sign In" disabled={ formValues.email && formValues.password ? false: true} />
+										{error && <p className="text-danger">{error}</p>}
 										<p className="mb-4">
 											<a href="#" id="RecoverPassword">
 												Forgot your password?
@@ -72,7 +79,7 @@ const LoginScreen = () => {
 										</p>
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

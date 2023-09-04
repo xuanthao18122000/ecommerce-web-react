@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-toastify/dist/ReactToastify.css';
 import DashboardScreen from './home/page';
 import HeaderScreen from '@/components/layouts/header.layout';
 import FooterScreen from '@/components/layouts/footer.layout';

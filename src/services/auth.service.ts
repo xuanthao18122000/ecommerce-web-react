@@ -1,12 +1,11 @@
 import { axiosUser } from "./api.service";
 
-const loginApi = async (payload: LoginPayload) => {
-  return await axiosUser.post("/auth/login", payload);
-};
-
-const registerApi = async (payload: RegisterPayload) => {
-  return await axiosUser.post("/auth/register", payload);
-};
+const loginApi = (payload: ILoginPayload) => {
+    return axiosUser.post("/auth/login", payload)
+}
+const registerApi = (payload: IRegisterPayload) => {
+    return axiosUser.post("/auth/register", payload)
+}
 
 const logoutApi = async () => {
   const token = localStorage.getItem("token");

@@ -36,6 +36,33 @@ interface ItemProductProps {
 }
 
 const ItemProduct: React.FC<ItemProductProps> = ({ product }) => {
+	const addToCart = async () => {
+		const cartsJson = localStorage.getItem("cart");
+		let carts;
+
+		if (cartsJson !== null) {
+			carts = JSON.parse(cartsJson);
+		} else {
+			carts = [];
+		}
+
+		let isProductExist = false;
+		for (let item of carts) {
+			if (item.id == product.id) {
+				isProductExist = true;
+				item.number += 1;
+			}
+		}
+		
+		if (!isProductExist) {
+			//@ts-ignore
+			product["number"] = 1;
+			carts.push(product);
+		}
+
+		localStorage.setItem("cart", JSON.stringify(carts));
+	};
+
 	return (
 		<div className="col-6 col-sm-6 col-md-4 col-lg-3 item">
 			<div className="product-image">
@@ -65,8 +92,12 @@ const ItemProduct: React.FC<ItemProductProps> = ({ product }) => {
 				<div className="saleTime desktop" data-countdown="2022/03/01" />
 
 				<form className="variants add" action="#">
-					<button className="btn btn-addto-cart" type="button">
-						Select Options
+					<button
+						onClick={addToCart}
+						className="btn btn-addto-cart"
+						type="button"
+					>
+						Add to Cart
 					</button>
 				</form>
 				<div className="button-set">

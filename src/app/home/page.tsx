@@ -99,7 +99,7 @@ export default function DashboardScreen() {
 										</form>
 										<div className="button-set">
 											<a
-												href="javascript:void(0)"
+												href=""
 												title="Quick View"
 												className="quick-view-popup quick-view"
 												data-toggle="modal"
@@ -153,7 +153,7 @@ export default function DashboardScreen() {
 										</form>
 										<div className="button-set">
 											<a
-												href="javascript:void(0)"
+												href=""
 												title="Quick View"
 												className="quick-view-popup quick-view"
 												data-toggle="modal"
@@ -269,7 +269,7 @@ export default function DashboardScreen() {
 										</form>
 										<div className="button-set">
 											<a
-												href="javascript:void(0)"
+												href=""
 												title="Quick View"
 												className="quick-view-popup quick-view"
 												data-toggle="modal"
@@ -327,7 +327,7 @@ export default function DashboardScreen() {
 										</form>
 										<div className="button-set">
 											<a
-												href="javascript:void(0)"
+												href=""
 												title="Quick View"
 												className="quick-view-popup quick-view"
 												data-toggle="modal"

@@ -37,8 +37,9 @@ const TShirtScreen = () => {
 	const [products, setProducts] = useState<Product[] | null>(null);
 	const [page, setPage] = useState<number>(1);
 	const [perPage, setPerPage] = useState<number>(10);
+	const [loading, setLoading] = useState<boolean>(true);
 
-	const [{ data, loading, error }] = useAxios<ProductResponse>({
+	const [{ data, error }] = useAxios<ProductResponse>({
 		baseURL: "http://localhost:3002",
 		url: `/products?page=${page}&perPage=${perPage}`,
 	});
@@ -47,18 +48,11 @@ const TShirtScreen = () => {
 		if (data) {
 			setProducts(data.data.list);
 		}
+		setLoading(false);
 	}, [data]);
 
 	return (
 		<div id="page-content" className="mt-5 pt-5">
-			{/* {products &&
-				products.map((product) => (
-					<div key={product.id} className="product-item">
-						<h3>{product.name}</h3>
-						<p>{product.description}</p>
-						<p>Price: {product.price}</p>
-					</div>
-				))} */}
 			<div className="container">
 				<div className="row">
 					<div className="col-12 col-sm-12 col-md-3 col-lg-3 sidebar filterbar">
@@ -591,8 +585,15 @@ const TShirtScreen = () => {
 								<div className="row">
 									{products &&
 										products.map((product) => (
-													<ItemProduct key={product.id} product={product} />
-										))}	
+											<ItemProduct key={product.id} product={product} />
+										))}
+									<div className="d-flex justify-content-center p-5">
+										{loading && (
+											<div className="spinner-border" role="status">
+												<span className="visually-hidden">Loading...</span>
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>

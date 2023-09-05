@@ -466,7 +466,7 @@ const DetailScreen = () => {
 												<div className="qtyField">
 													<a
 														className="qtyBtn minus"
-														href="javascript:void(0);"
+														href=""
 													>
 														<i
 															className="fa anm anm-minus-r"
@@ -480,7 +480,7 @@ const DetailScreen = () => {
 														defaultValue={1}
 														className="product-form__input qty"
 													/>
-													<a className="qtyBtn plus" href="javascript:void(0);">
+													<a className="qtyBtn plus" href="">
 														<i
 															className="fa anm anm-plus-r"
 															aria-hidden="true"

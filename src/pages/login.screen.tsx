@@ -1,8 +1,11 @@
 "use client";
 
-import { loginApi } from "@/services/auth.service";
+import { loginApi, loginFacebookApi, loginGoogleApi } from "@/services/auth.service";
 import useAxios from "axios-hooks";
 import React, { useState } from "react";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
+
 // import { useRouter } from "next/router";
 
 const LoginScreen = () => {
@@ -21,6 +24,18 @@ const LoginScreen = () => {
 		console.log(">>> Check response: ", response)
 	};
 
+	const responseGoogle = (response: any) => {
+    console.log(response);
+  };
+
+	const responseFacebook = (response: any) => {
+    console.log(response);
+  };
+
+	const responseFacebookFailed = async () => {
+		
+	};
+
 	return (
 		<div id="page-content">
 			<div className="page section-header text-center">
@@ -36,8 +51,20 @@ const LoginScreen = () => {
 					<div className="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
 						<div className="mb-4">
 							<div className="d-flex justify-content-between align-items-center mb-4">
-								<div className="py-3 bg-danger text-white rounded text-center" style={{ width: '48%' }}>Google</div>
-								<div className="py-3 bg-primary text-white rounded text-center" style={{ width: '48%' }}>Facebook</div>
+								{/* <button onClick={responseGoogle} className="py-3 bg-danger text-white rounded text-center" style={{ width: '48%' }}>Google</button> */}
+								<GoogleLogin
+									clientId='129029747488-fml7lldggf1j165dr9ciar8278k3aug8.apps.googleusercontent.com'
+									buttonText="Login with Google"
+									onSuccess={responseGoogle}
+									onFailure={responseGoogle}
+									cookiePolicy={"single_host_origin"}
+								/>
+								<FacebookLogin
+									appId="315598537513872"
+									// fields="name,picture" // Specify the fields you need
+									callback={responseFacebook}
+								/>
+								{/* <button onClick={loginFacebook} className="py-3 bg-primary text-white rounded text-center" style={{ width: '48%' }}>Facebook</button> */}
 							</div>
 							<div id="CustomerLoginForm" className="contact-form">
 								<div className="row mb-5">

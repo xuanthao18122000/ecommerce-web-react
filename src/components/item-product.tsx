@@ -50,13 +50,13 @@ const ItemProduct: React.FC<ItemProductProps> = ({ product }) => {
 		for (let item of carts) {
 			if (item.id == product.id) {
 				isProductExist = true;
-				item.number += 1;
+				item.quantity += 1;
 			}
 		}
 		
 		if (!isProductExist) {
 			//@ts-ignore
-			product["number"] = 1;
+			product["quantity"] = 1;
 			carts.push(product);
 		}
 

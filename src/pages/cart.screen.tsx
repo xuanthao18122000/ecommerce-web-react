@@ -10,7 +10,7 @@ type Product = {
 	description: string;
 	price: string;
 	status: number;
-	number: number;
+	quantity: number;
 	logs: {
 		list: [];
 	};
@@ -89,7 +89,7 @@ const CartScreen = () => {
 																type="text"
 																name="updates[]"
 																id="qty"
-																value={product.number}
+																value={product.quantity}
 																pattern="[0-9]*"
 															/>
 															<a className="qtyBtn plus" href=";">
@@ -100,7 +100,7 @@ const CartScreen = () => {
 												</td>
 												<td className="text-right small--hide cart-price">
 													<div>
-														<span className="money">{Number(product.price) * product.number}</span>
+														<span className="money">{Number(product.price) * product.quantity}</span>
 													</div>
 												</td>
 												<td className="text-center small--hide">

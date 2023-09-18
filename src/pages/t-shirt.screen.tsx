@@ -19,14 +19,14 @@ type Product = {
 	};
 };
 
-interface ProductResponse {
+type ProductResponse = {
 	code: number;
 	success: boolean;
 	data: DataProduct;
 	msg: string;
 }
 
-interface DataProduct {
+type DataProduct = {
 	list: Product[];
 	total: number;
 	page: number;
@@ -45,10 +45,8 @@ const TShirtScreen = () => {
 	});
 
 	useEffect(() => {
-		if (data) {
-			setProducts(data.data.list);
-		}
-		setLoading(false);
+		data && setProducts(data.data.list);
+  		setLoading(false);
 	}, [data]);
 
 	return (

@@ -20,4 +20,13 @@ const axiosCart = axios.create({
   baseURL: "http://localhost:3005",
 });
 
-export { axiosUser, axiosProduct, axiosPayment, axiosOrder, axiosCart };
+const getTokenHeader = () => {
+  const token = localStorage.getItem("token");
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+};
+
+export { axiosUser, axiosProduct, axiosPayment, axiosOrder, axiosCart, getTokenHeader };

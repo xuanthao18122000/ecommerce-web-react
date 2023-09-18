@@ -9,14 +9,13 @@ const OrderScreen = () => {
   const initModal = () => {
     return invokeModal(!isShow)
   }
+
+
 	return (
 		<div id="page-content" className="container pt-5">
-      <Button variant="success" onClick={initModal}>
-        Open Modal
-      </Button>
       <Modal show={isShow} className="w-100">
         <Modal.Header closeButton onClick={initModal}>
-          <Modal.Title>Chi tiết đơn hàng</Modal.Title>
+          <p className="h1 fw-bold pt-2 ">Chi tiết đơn hàng</p>
         </Modal.Header>
         <Modal.Body>
           <div className="information mb-4">
@@ -49,9 +48,6 @@ const OrderScreen = () => {
           <Button variant="danger" onClick={initModal}>
             Close
           </Button>
-          <Button variant="dark" onClick={initModal}>
-            Store
-          </Button>
         </Modal.Footer>
       </Modal>
       <div className="information mb-4">
@@ -74,7 +70,7 @@ const OrderScreen = () => {
 						<td className="py-4"><label className="bg-body-secondary text-dark-subtle rounded p-2">#DH001</label></td>
 						<td className="py-4"><label className="bg-warning-subtle text-warning rounded p-2">Chờ xác nhận</label></td>
 						<td className="py-4">18-12-2022</td>
-						<td className="py-4"><button type="button" className="bg-white rounded py-1"><FontAwesomeIcon icon={faEye}/></button></td>
+						<td className="py-4 text-center"><button type="button" className="bg-white rounded py-1" onClick={initModal}><FontAwesomeIcon icon={faEye}/></button></td>
 					</tr>
 				</tbody>
 			</table>
